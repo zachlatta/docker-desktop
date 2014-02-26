@@ -35,7 +35,7 @@ RUN ln -s /usr/bin/Xorg /usr/bin/X
 RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
 
 # Upstart and DBus have issues inside docker. We work around in order to install firefox.
-RUN dpkg-divert --local --rename --add /sbin/initctl && ln -s /bin/true /sbin/initctl
+RUN dpkg-divert --local --rename --add /sbin/initctl && ln -s /bin/true /sbin/initctl -f
 
 # Installing fuse package (libreoffice-java dependency) and it's going to try to create
 # a fuse device without success, due the container permissions. || : help us to ignore it. 
