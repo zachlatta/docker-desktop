@@ -48,7 +48,7 @@ RUN apt-get -y install fuse
 
 # Installing the apps: Firefox, flash player plugin, LibreOffice and xterm
 # libreoffice-base installs libreoffice-java mentioned before
-RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm ubuntu-restricted-extras 
+RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm 
 
 # Set locale (fix the locale warnings)
 RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
